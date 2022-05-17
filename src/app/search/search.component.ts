@@ -37,6 +37,7 @@ export class SearchComponent implements OnInit {
       tap(() => {
         this.movies=[]
         this.isLoading = true;
+        this.message=undefined
       }),
       switchMap((query) => this.movieService.searchMovies(query))
     );
