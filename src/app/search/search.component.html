@@ -1,0 +1,22 @@
+<section class="search">
+  <form class="search__form" method="get">
+    <label>
+      <input
+        [formControl]="userInput"
+        class="search__input"
+        id="search"
+        name="search"
+        placeholder="Search Your Movie"
+        type="search"
+        autofocus
+      />
+    </label>
+  </form>
+</section>
+<div class="spinner" *ngIf="isLoading">
+  <mat-spinner> </mat-spinner>
+</div>
+<div *ngIf="movies">
+  <app-movie-list [moviesP]="movies"></app-movie-list>
+</div>
+<div class="movie__no-movies" *ngIf="message">{{ message }}</div>

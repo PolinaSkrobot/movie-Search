@@ -1,0 +1,27 @@
+<div class="movie__poster-wrapper">
+  <ng-container
+    *ngIf="movieP.Poster == 'N/A'; then noPoster; else hasPoster"
+  ></ng-container>
+  <ng-template #noPoster>
+    <div>
+      <img
+        class="movie__poster"
+        src="../../assets/img/no-poster.png"
+        alt="Poster"
+      />
+    </div>
+  </ng-template>
+  <ng-template #hasPoster>
+    <div>
+      <img class="movie__poster" src="{{ movieP.Poster }}" alt="Poster" />
+    </div>
+  </ng-template>
+</div>
+<span class="movie__title">{{ movieP.Title }}</span>
+<span class="movie__year">{{ movieP.Year }}</span>
+<a
+  class="btn movie__btn"
+  href="{{movieP.imdbID | url }}"
+  target="_blank"
+  >To IMDB <span class="btn__arrow">&rarr;</span></a
+>

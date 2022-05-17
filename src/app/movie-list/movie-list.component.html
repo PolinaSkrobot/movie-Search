@@ -1,0 +1,11 @@
+<ul id="movies" class="movie__list">
+  <li
+    *ngFor="let movie of moviesP"
+    class="movie__item"
+    id="{{ movie.imdbID }}"
+    style="background: rgba(255, 255, 255, 0.5)"
+  >
+  <app-movie-item [movieP]="movie"></app-movie-item>
+
+  </li>
+</ul>
