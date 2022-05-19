@@ -153,6 +153,7 @@ ul, li {
   align-items: center;
 }
 .movie__item {
+  background: rgba(255, 255, 255, 0.5);
   width: 30%;
   height: auto;
   margin: 20px;

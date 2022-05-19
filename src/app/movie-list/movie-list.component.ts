@@ -7,11 +7,8 @@ import { Movie } from '../movie';
   templateUrl: './movie-list.component.html',
   styleUrls: ['./movie-list.component.css']
 })
-export class MovieListComponent implements OnInit {
-  @Input() public moviesP: Movie[];
-  constructor() {this.moviesP = []; }
-
-  ngOnInit(): void {
-  }
+export class MovieListComponent {
+  @Input() public moviesP: Movie[]=[];
+  constructor() { }
 
 }
