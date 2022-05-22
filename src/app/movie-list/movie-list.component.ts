@@ -8,7 +8,7 @@ import { Movie } from '../movie';
   styleUrls: ['./movie-list.component.css']
 })
 export class MovieListComponent {
-  @Input() public moviesP: Movie[]=[];
+  @Input() public moviesP?: Movie[];
   constructor() { }
 
 }
