@@ -9,7 +9,8 @@ The search input is working "on a fly" for the better user experience.
 ## Running the project
 
 - Clone this repo
-- Install dependencies npm i
+- Navigate to the repo
+- Install dependencies running `npm i` in the repo
 - In the project directory run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
 
