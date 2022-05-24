@@ -11,6 +11,6 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 !["main"](https://github.com/PolinaSkrobot/movie-Search/blob/master/src/assets/main.gif)
 
 ## Tech Stack:
-TypeScript
-Angular
-RxJx
+- TypeScript
+- Angular
+- RxJx
