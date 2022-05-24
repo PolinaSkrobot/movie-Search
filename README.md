@@ -16,4 +16,4 @@ The search input is working "on a fly" for the better user experience.
 ## Tech Stack:
 - TypeScript
 - Angular
-- RxJx
+- RxJs

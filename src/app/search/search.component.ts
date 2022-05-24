@@ -13,7 +13,7 @@ import { FormControl } from "@angular/forms";
 })
 export class SearchComponent implements OnInit {
   @Output() inputValue = new EventEmitter();
-  searchResult$?: Observable<string>;
+  userQuery$?: Observable<string>;
   public userInput = new FormControl();
 
   ngOnInit(): void {
@@ -31,11 +31,11 @@ export class SearchComponent implements OnInit {
     //   }),
     //   switchMap((query) => this.movieService.searchMovies(query))
     // );
-    this.searchResult$ = this.userInput.valueChanges.pipe(
+    this.userQuery$ = this.userInput.valueChanges.pipe(
       debounceTime(300),
       distinctUntilChanged()
     );
-    this.searchResult$.subscribe((res) => {
+    this.userQuery$.subscribe((res) => {
       this.inputValue.emit(res);
     });
   }
