@@ -41,7 +41,7 @@
 }
 @media screen and (max-width: 520px) {
   .search__input {
-    width: 88%;
+    width: 100%;
   }
 }
 .search__input::-ms-clear {
