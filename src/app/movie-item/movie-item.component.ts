@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Movie } from '../movie';
 
 @Component({
@@ -6,8 +6,9 @@ import { Movie } from '../movie';
   templateUrl: './movie-item.component.html',
   styleUrls: ['./movie-item.component.css']
 })
-export class MovieItemComponent implements OnInit {
+export class MovieItemComponent {
   @Input() public movieP: Movie;
+
   constructor() {
    this.movieP= {
      Year: 1,
@@ -18,7 +19,4 @@ export class MovieItemComponent implements OnInit {
    }
   }
 
-  ngOnInit(): void {
-  }
-
-}
+ }
