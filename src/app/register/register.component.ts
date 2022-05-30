@@ -44,6 +44,8 @@ export class RegisterComponent {
   register(): void {
     if (this.auth.unique(this.registrationForm.value.email)) {
       this.auth.registerUser(this.registrationForm);
-    } else this.message = "Sorry... User with such email already exist";
+    } else {
+      this.message = "Sorry... The user with such email already exists"
+    }
   }
 }

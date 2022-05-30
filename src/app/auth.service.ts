@@ -11,15 +11,29 @@ export class AuthService {
   constructor(private router: Router) { }
 
   registerUser(form: FormGroup): void {
-    if (this.unique(form.value.email)) {
       this.users.push(form.value);
       localStorage.setItem("form-data", JSON.stringify(this.users));
       this.router.navigate(["/main"]);
-    }
+ 
   }
   unique(email: string): boolean {
     this.users = JSON.parse(localStorage.getItem("form-data") || "");
     const exist = this.users.filter((x) => x.email === email);
     return exist.length ? false : true;
+  }
+
+  login(form: FormGroup): void {
+    if (this.exist(form.value.email, form.value.password)) {
+      this.router.navigate(["/main"]);
+    } else {
+      this.router.navigate(["/register"]);
+    }
+  }
+  exist(email: string, password: string): boolean {
+    this.users = JSON.parse(localStorage.getItem("form-data") || "");
+    const exist = this.users.filter(
+      (x) => x.email === email && x.password === password
+    );
+    return exist.length ? true : false;
   }
 }
