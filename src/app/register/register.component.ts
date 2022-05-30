@@ -1,8 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { FormControl, FormGroup } from "@angular/forms";
+import { AbstractControl, FormControl, FormGroup } from "@angular/forms";
 import { Validators } from "@angular/forms";
-import { Router } from "@angular/router";
-import { User } from "../user";
+import { AuthService } from "../auth.service";
 
 @Component({
   selector: "app-register",
@@ -10,7 +9,6 @@ import { User } from "../user";
   styleUrls: ["./register.component.css"],
 })
 export class RegisterComponent {
-  users: User[] = [];
   message?: string;
   registrationForm = new FormGroup({
     firstName: new FormControl(
@@ -31,29 +29,21 @@ export class RegisterComponent {
     password: new FormControl(""),
   });
 
-  constructor(private router: Router) {}
+  constructor(private auth: AuthService) {}
 
-  get firstName() {
-    return this.registrationForm.get("firstName");
+  get firstName(): AbstractControl {
+    return this.registrationForm.get("firstName")!;
   }
-  get lastName() {
-    return this.registrationForm.get("lastName");
+  get lastName(): AbstractControl {
+    return this.registrationForm.get("lastName")!;
   }
-  get email() {
-    return this.registrationForm.get("email");
+  get email(): AbstractControl {
+    return this.registrationForm.get("email")!;
   }
- 
-  registerUser(): void {
-    if (this.unique(this.registrationForm.value.email)) {
-      this.users.push(this.registrationForm.value);
-      localStorage.setItem("form-data", JSON.stringify(this.users));
-      this.router.navigate(["/main"]);
-    }
-     else this.message = "User with such email already exist";
-  }
-  unique(email: string): boolean {
-    this.users = JSON.parse(localStorage.getItem("form-data") || "");
-    const exist = this.users.filter((x) => x.email === email);
-    return exist.length ? false : true;
+
+  register(): void {
+    if (this.auth.unique(this.registrationForm.value.email)) {
+      this.auth.registerUser(this.registrationForm);
+    } else this.message = "Sorry... User with such email already exist";
   }
 }
