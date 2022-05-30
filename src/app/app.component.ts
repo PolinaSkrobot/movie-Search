@@ -7,11 +7,4 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
   title = "angular-movie-search";
-  searchValue = "";
-
-  searchChanged(input: string): void {
-    this.searchValue = input;
-  }
-
-
 }

@@ -11,6 +11,9 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { MovieItemComponent } from './movie-item/movie-item.component'
 import { UrlPipe } from './url.pipe';
+import { MainComponent } from './main/main.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -19,8 +22,10 @@ import { UrlPipe } from './url.pipe';
     SearchComponent,
     MovieListComponent,
     MovieItemComponent,
-    UrlPipe
-  ],
+    UrlPipe,
+    MainComponent,
+    LoginComponent,
+  RegisterComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

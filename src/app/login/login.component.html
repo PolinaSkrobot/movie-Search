@@ -1,0 +1,16 @@
+<div class="search">
+  <h2>Login Form</h2>
+    <form [formGroup]="loginForm" >
+      <div class="line">
+       <div class="line2">
+          <label>Email</label>
+          <input type="text" formControlName="email" style="width: 250px;"/>
+        </div>
+        <div class="line2">
+          <label>Password</label>
+          <input type="text" formControlName="password" style="width: 250px;"/>
+        </div>
+      </div>
+      <button (click)="login()" type="button" style="width: 100px; margin-top: 10px;height: 30px;">Login</button>
+    </form>
+</div>
