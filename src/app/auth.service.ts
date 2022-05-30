@@ -8,6 +8,7 @@ import { User } from './user';
 })
 export class AuthService {
   users: User[]=[]
+  logged=false
   constructor(private router: Router) { }
 
   registerUser(form: FormGroup): void {
@@ -25,6 +26,7 @@ export class AuthService {
   login(form: FormGroup): void {
     if (this.exist(form.value.email, form.value.password)) {
       this.router.navigate(["/main"]);
+      this.logged=true
     } else {
       this.router.navigate(["/register"]);
     }
