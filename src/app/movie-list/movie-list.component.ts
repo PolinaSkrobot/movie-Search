@@ -36,6 +36,7 @@ export class MovieListComponent {
           }
         });
     } else {
+      this.movies = [];
       this.message = undefined;
     }
   }
