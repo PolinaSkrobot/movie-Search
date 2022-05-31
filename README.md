@@ -1,5 +1,5 @@
 # AngularMovieSearch
-Movie Search is an app that finds films using OMDB API.
+Movie Search is an app that finds films using OMDB API. Registration was implemented with FormBuilder and Validators, login functionality is supported by Guard.
 The search input is working "on a fly" for the better user experience.
 
 
